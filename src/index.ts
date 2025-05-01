@@ -70,3 +70,35 @@ let Alex:Person = {
     age: 26,
     alive: true
 }
+
+let genericExample = <T>(data:T):T => {
+    return data
+}
+
+genericExample(<string>"Hello World")
+genericExample(<number>123)
+
+type Props = {
+    title: string,
+    data: string,
+}
+
+const myComponent = ({title, data}: Props) =>  {
+    return `${title} and ${data}`
+}
+
+const PageTitle = ({title}) => {
+    const [subTitle, setSubTitle] = useState<string | null>(null)
+    return (
+        <h2>{title}<h2>
+    )
+}
+
+
+type ButtonProps = {
+    updateFunction: (value:string) => void
+}
+
+const Button = ({updateFunction}: ButtonProps) => {
+
+}
